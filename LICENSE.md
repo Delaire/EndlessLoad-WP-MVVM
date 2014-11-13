@@ -1,3 +1,11 @@
+## Supported Platforms
+* Windows Store
+* Windows Phone
+* Windows Universal
 
-Ok for all
+## Contribute	
+Please help out
+
+##License
+MIT
 

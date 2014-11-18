@@ -1,2 +1,2 @@
-EndlessLoad-WP-MVVM
+EndlessLoad on Windows Phone using MVVM
 ===================

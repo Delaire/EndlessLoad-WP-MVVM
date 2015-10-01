@@ -1,0 +1,38 @@
+﻿<Page x:Class="App1.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:local="using:App1"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+      DataContext="{Binding MainPageVmodel,
+                            Mode=TwoWay,
+                            Source={StaticResource Locator}}"
+      mc:Ignorable="d">
+
+    <interactivity:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:InvokeCommandAction Command="{Binding PageLoaded}" />
+        </core:EventTriggerBehavior>
+    </interactivity:Interaction.Behaviors>
+
+
+    <Grid>
+        <ListView x:Name="LatestListBox"
+                  Margin="0"
+                  ItemsSource="{Binding DataListLoader}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding Text}" />
+                        <TextBlock Text="{Binding Index}" />
+                        <TextBlock Text="{Binding ImageUrl}" />
+                    </Grid>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
